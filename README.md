@@ -18,3 +18,12 @@ Edit in run.conf file:
 > c3p0.testConnectionOnCheckin=true  
 > c3p0.unreturnedConnectionTimeout=60  
 > c3p0.checkoutTimeout=60000  
+
+## G1 GC Collector Settings(JDK7_55):  
+> -XX:+UseG1GC
+> -Xms6144m
+> -Xmx6144m
+> -XX:MaxPermSize=256m
+> -XX:InitiatingHeapOccupancyPercent=55
+> -XX:MaxGCPauseMillis=200
+> -XX:+ParallelRefProcEnabled
