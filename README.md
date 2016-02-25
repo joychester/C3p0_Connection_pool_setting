@@ -20,7 +20,7 @@ Edit in run.conf file:
 > c3p0.checkoutTimeout=60000  
 
 ## G1 GC Collector Settings(JDK7_55):  
-> -server
+> -server  
 > -XX:+UseG1GC  
 > -Xms6144m  
 > -Xmx6144m  
