@@ -20,6 +20,7 @@ Edit in run.conf file:
 > c3p0.checkoutTimeout=60000  
 
 ## G1 GC Collector Settings(JDK7_55):  
+> -server
 > -XX:+UseG1GC  
 > -Xms6144m  
 > -Xmx6144m  
@@ -27,3 +28,38 @@ Edit in run.conf file:
 > -XX:InitiatingHeapOccupancyPercent=55  
 > -XX:MaxGCPauseMillis=200  
 > -XX:+ParallelRefProcEnabled  
+
+## CMS GC Collector Settings with Normal heap size(JDK7_55):  
+> -server
+> -Xms4096m
+> -Xmx4096m
+> -XX:NewRatio=2
+> -XX:+CMSClassUnloadingEnabled
+> -XX:+DisableExplicitGC
+> -XX:+UseConcMarkSweepGC
+> -XX:+UseParNewGC
+> -XX:MaxPermSize=512m
+> -XX:ReservedCodeCacheSize=96m
+> -XX:CMSInitiatingOccupancyFraction=70
+> -XX:+UseCMSInitiatingOccupancyOnly  
+
+## CMS GC Collector Settings with Large heap size and 10 CPU Cores(JDK7_55):  
+> -server
+> -Xms24g
+> -Xmx24g
+> -XX:NewRatio=2
+> -XX:+CMSClassUnloadingEnabled
+> -XX:+DisableExplicitGC
+> -XX:+UseConcMarkSweepGC
+> -XX:+UseParNewGC
+> -XX:MaxPermSize=512m
+> -XX:ReservedCodeCacheSize=96m
+> -XX:+UnlockDiagnosticVMOptions
+> -XX:ParGCCardsPerStrideChunk=4096
+> -XX:CMSInitiatingOccupancyFraction=85
+> -XX:+UseCMSInitiatingOccupancyOnly
+> -XX:ParallelGCThreads=16
+> -XX:ConcGCThreads=4  
+
+## Check JVM options default value:
+> java -XX:+PrintFlagsFinal  
