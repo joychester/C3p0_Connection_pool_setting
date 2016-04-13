@@ -42,6 +42,7 @@ Edit in run.conf file:
 > -XX:ReservedCodeCacheSize=96m  
 > -XX:CMSInitiatingOccupancyFraction=70  
 > -XX:+UseCMSInitiatingOccupancyOnly  
+> -XX:+ParallelRefProcEnabled  
 
 ## CMS GC Collector Settings with Large heap size and 10 CPU Cores(JDK7_55):   
 > -server  
@@ -59,7 +60,11 @@ Edit in run.conf file:
 > -XX:CMSInitiatingOccupancyFraction=85  
 > -XX:+UseCMSInitiatingOccupancyOnly  
 > -XX:ParallelGCThreads=16  
-> -XX:ConcGCThreads=4  
+> -XX:ConcGCThreads=4 
+> -XX:+ParallelRefProcEnabled  
 
 ## Check JVM options default value:  
 > java -XX:+PrintFlagsFinal  
+
+
+ > Note: If the weak refs processing is dominate, you might be able to cut that time down by using parallel reference processing (-XX:+ParallelRefProcEnabled).   
