@@ -68,3 +68,23 @@ Edit in run.conf file:
 
 
  > Note: If the weak refs processing is dominate, you might be able to cut that time down by using parallel reference processing (-XX:+ParallelRefProcEnabled).   
+
+## Tomcat JDBC connection pool Config:
+> Pool sizing properties:
+  - initialSize
+  - maxActive
+  - maxIdle
+  - minIdle
+  - timeBetweenEvictionRunsMillis
+  - minEvictableIdleTimeMillis
+> Validate connections properties:
+  - validationQuery
+  - validationInterval
+  - testOnBorrow
+> Connection leak prevent properties:
+  - removeAbandoned
+  - removeAbandonedTimeout
+  - validationQuery
+> Useful links:
+[Tomcat CP offical doc](https://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#Common_Attributes)
+[A good example for reference](http://www.codingpedia.org/ama/tomcat-jdbc-connection-pool-configuration-for-production-and-development/)
