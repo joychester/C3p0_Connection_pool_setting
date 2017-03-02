@@ -62,7 +62,7 @@ Edit in run.conf file:
 > -XX:CMSInitiatingOccupancyFraction=85  
 > -XX:+UseCMSInitiatingOccupancyOnly  
 > -XX:ParallelGCThreads=16  
-> -XX:ConcGCThreads=4 
+> -XX:ConcGCThreads=4  
 > -XX:+ParallelRefProcEnabled  
 
 ## Check JVM options default value:  
