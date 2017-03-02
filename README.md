@@ -29,6 +29,8 @@ Edit in run.conf file:
 > -XX:MaxGCPauseMillis=200  
 > -XX:+ParallelRefProcEnabled  
 
+> -XX:+UseStringDeduplication after JDK8_20
+
 ## CMS GC Collector Settings with Normal heap size(JDK7_55):  
 > -server  
 > -Xms4096m  
